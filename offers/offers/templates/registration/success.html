@@ -1,0 +1,23 @@
+{% extends 'registration/base.html' %} 
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-centered">
+        <h1 class="mt-5 mb-3">Login Success!</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-centered mt-3 text-center">
+        <a href="{% url 'dashboard' %}" class="btn btn-primary" style="margin-right: 10px;">GO TO DASHBOARD</a>
+      </div>
+      <div class="col-md-6 col-centered mt-3 text-center">
+        <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-secondary">Logout</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %} 
